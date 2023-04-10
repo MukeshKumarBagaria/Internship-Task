@@ -1,10 +1,10 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
-
-const NavBar = () => {
+import '../Assets/Styles/navbar.css'
+const NavBar = (props) => {
   return (
-    <Navbar bg="light" expand="lg" style={{ backgroundColor: '#F8CDCE' }}>
-      <Navbar.Brand style={{ margin: 'auto', fontSize:"30px" , fontFamily:"Futura" , color:"ActiveBorder"}}>Respondent Travel Profile</Navbar.Brand>
+    <Navbar expand="lg" style={{ backgroundColor: "#97DEFF" }}>
+      <Navbar.Brand style={{ margin: 'auto', fontSize:"30px" , fontFamily:"Futura" , color:"ActiveBorder"}}> {props.title}</Navbar.Brand>
     </Navbar>
   );
 };

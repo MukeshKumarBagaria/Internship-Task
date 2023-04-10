@@ -1,0 +1,47 @@
+/* card styles */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-top: 5px;
+  }
+  
+  .card-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+
+  .fixed-button {
+    border: 1px solid #AA77FF;
+    width: 200px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #97DEFF;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+
+.fixed-button.disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+  .fixed-button:hover {
+    transform: scale(1.02);
+    background-color: #97DDFA;
+  }
+  
+  
+  
+
+
+  

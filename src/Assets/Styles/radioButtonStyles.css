@@ -39,3 +39,21 @@
     margin-right: 5px;
   }
   
+
+  .options-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-check-input {
+    margin-right: 10px;
+  }
+  
+  .form-check-label {
+    font-size: 18px;
+  }
+  
+  .font-weight-bold {
+    font-weight: bold;
+  }
+  

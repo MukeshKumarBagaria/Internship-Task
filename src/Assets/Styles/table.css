@@ -1,0 +1,46 @@
+.mode-table {
+    margin: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+   
+  }
+  .table-bordered td,
+  .table-bordered th {
+    border-width: 45px;
+    border-style: solid;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    text-align: center;
+    border: 5px solid black;
+    color:black;
+    
+  
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  
+  td label {
+    display: block;
+    text-align: center;
+  }
+  
+  td input[type="radio"] {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  .Mode-Choice-row td{
+   color:#7E3A2A;
+  font-weight:bold;
+  }

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import RadioButtonQuestion from '../Components/RadioButtonQuestion';
 import DistanceOptions from '../Assets/Data/DistanceOptions';
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import {  Container, Row, Col } from 'react-bootstrap';
 import NavBar from '../Components/Navbar';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import '../Assets/Styles/homepage.css'
 const HomePage = () => {
     //state to store answer of question-1 and question-2
     const [selectedQ1, setSelectedQ1] = useState('');
     const [selectedQ2, setSelectedQ2] = useState('');
-
 
     //state to store is option selected or not based on that enabling/disabling next button
     const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
@@ -25,10 +25,10 @@ const HomePage = () => {
 
     const handleQ2Select = (option) => {
         setSelectedQ2(option);
-         // Check if both selectedQ1 and selectedQ2 have values
-         const isSubmitDisabled = selectedQ1 === "" || option === "";
-         // Update the isSubmitDisabled state
-         setIsSubmitDisabled(isSubmitDisabled);
+        // Check if both selectedQ1 and selectedQ2 have values
+        const isSubmitDisabled = selectedQ1 === "" || option === "";
+        // Update the isSubmitDisabled state
+        setIsSubmitDisabled(isSubmitDisabled);
     };
 
     const navigate = useNavigate();
@@ -51,48 +51,62 @@ const HomePage = () => {
         setIsSubmitDisabled(isSubmitDisabled);
     };
 
-    return (<>
-        <NavBar />
-        <Container className='text-center'>
+    return (
+        <>
+            <NavBar title='Respondent Travel Profile' />
+            <div className='home-page-wrapper'>
+                <Container>
+                    <Row className='justify-content-center'>
+                        <Col md={6} className='mb-4'>
+                            <div className='card'>
+                                <RadioButtonQuestion
+                                    question='What is your most frequently used means of travel from your home to work location?'
+                                    options={[
+                                        'Bus',
+                                        'Metro',
+                                        'Own Two-wheeler',
+                                        'Own Car',
+                                        'Walk / Bicycle',
+                                        'Auto',
+                                        'App based ride hailing cab services including Ola / Uber',
+                                    ]}
+                                    onSelect={handleQ1Select}
+                                />
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row className='justify-content-center'>
+                        <Col md={6} className='mb-4'>
+                            <div className='card'>
+                                <RadioButtonQuestion
+                                    question='What is the total distance between your home and workplace?'
+                                    options={DistanceOptions}
+                                    onSelect={handleQ2Select}
+                                />
+                            </div>
+                        </Col>
+                    </Row>
+                    <div>
+                        {isSubmitDisabled ? (
+                            <button disabled className="fixed-button ">
+                                Next
+                            </button>
+                        ) : (
+                            <button onClick={handleSubmit} className="fixed-button">
+                                Next
+                            </button>
+                        )}
+                    </div>
 
-            <Row className='justify-content-center'>
-                <Col md={6} className='mb-4'>
-                    <RadioButtonQuestion
-                        question="What is your most frequently used means of travel from your home to work location?"
-                        options={[
-                            'Bus',
-                            'Metro',
-                            'Own Two-wheeler',
-                            'Own Car',
-                            'Walk / Bicycle',
-                            'Auto',
-                            'App based ride hailing cab services including Ola / Uber'
-                        ]}
-                        onSelect={handleQ1Select}
-                    />
-                </Col>
-            </Row>
-            <Row className='justify-content-center'>
-                <Col md={6} className='mb-4'>
-                    <RadioButtonQuestion
-                        question="What is the total distance between your home and workplace?"
-                        options={DistanceOptions}
-                        onSelect={handleQ2Select}
-                    />
-                </Col>
-            </Row>
-            <Row className='justify-content-center'>
-                <Col md={3}>
-                    {isSubmitDisabled ? (
-                        <Button disabled>Next</Button>
-                    ) : (
-                        <Button onClick={handleSubmit}>Next</Button>
-                    )}
-                </Col>
-            </Row>
-        </Container>
-    </>
+                </Container>
+            </div>
+        </>
     );
 };
 
 export default HomePage;
+
+
+
+
+
