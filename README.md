@@ -3,9 +3,9 @@
 IISC INTERNSHIP TASK
 ## Screenshots
 
-![alt text](src/assets/images/homepage.png)
+<img src="src/Assets/Images/homepage.png" height="225">  
 *Caption: This is a screenshot of my project's homepage.*
-![alt text](src/assets/images/choicemode.png)
+<img src="src/Assets/Images/choicemode.png" height="225">
 *Caption: This is a screenshot of my project's choicemode.*
 
 ## Libraries Used
